@@ -16,7 +16,7 @@ $headers  = 'MIME-Version: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
 
 // Дополнительные заголовки
-$headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
+$headers .= 'To: Иван <presnyakovsa@gmail.com>' . "\r\n"; // Свое имя и email
 $headers .= 'From: '  . $_POST['name'] . '<' . $_POST['email'] . '>' . "\r\n";
 
 
