@@ -8,37 +8,13 @@
         <main>
           <h1>HELLO WORLD</h1>
           
-  <form method="post">
+  <form action="send.php" method="post">
 Ваше имя: <input type="text" name="name" placeholder="Иван">
 Email для связи: <input type="email" name="email" placeholder="адрес электронной почты">
 Ваше сообщение: <textarea name="message" rows="5"></textarea>
 <input type="submit" value="отправить">
 </form>
-            <?php
-// несколько получателей
-$to  = 'presnyakovsa@gmail.com' . ', ';  // обратите внимание на запятую
-$to .= 'presnyakovsa@gmail.com';
-
-// тема письма
-$subject = 'Письмо с моего сайта';
-
-// текст письма
-$message = 'Пользователь' . $_POST['name'] . ' отправил вам письмо:<br />' . $_POST['message'] . '<br />
-Связяться с ним можно по email <a href="mailto:' . $_POST['email'] . '">' . $_POST['email'] . '</a>'
-;
-
-// Для отправки HTML-письма должен быть установлен заголовок Content-type
-$headers  = 'MIME-Version: 1.0' . "\r\n";
-$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n"; 
-
-// Дополнительные заголовки
-$headers .= 'To: Иван <Ivan@example.com>' . "\r\n"; // Свое имя и email
-$headers .= 'From: '  . $_POST['name'] . '<' . $_POST['email'] . '>' . "\r\n";
-
-
-// Отправляем
-mail($to, $subject, $message, $headers);
-?>
+         
         </main>
       </body>
     </html>
